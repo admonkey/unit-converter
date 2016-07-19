@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# quit on error
+set -e
+
+# move to working directory
+cd $(dirname "${BASH_SOURCE[0]}")
+
+# get composer if not already downloaded
+if [ ! -f composer.phar ]; then
+  wget https://getcomposer.org/download/1.2.0/composer.phar
+fi
+
+# install dependencies
+php composer.phar install

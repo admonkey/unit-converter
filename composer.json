@@ -1,0 +1,19 @@
+{
+    "name": "jeff-puckett/unit-converter",
+    "description": "Functions for unit conversions.",
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "license": "cc by-sa 3.0",
+    "authors": [
+        {
+            "name": "Jeff Puckett",
+            "email": "jeff@jeffpuckett.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Puckett\\": "src/"
+      }
+    }
+}
