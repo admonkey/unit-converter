@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# quit on error
+set -e
+
+# move to working directory
+cd $( dirname "${BASH_SOURCE[0]}" )
+
+# PHP Unit tests
+
+# -v for verbose
+if [ "$1" == "-v" ]; then
+  ./vendor/bin/phpunit --debug   --stderr --bootstrap vendor/autoload.php tests
+else
+  ./vendor/bin/phpunit --testdox --stderr --bootstrap vendor/autoload.php tests
+fi
