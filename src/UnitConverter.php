@@ -2,10 +2,15 @@
 
 class UnitConverter {
 
-  function formatBytes($bytes, $precision = 2, $format = null) { 
-      $base = log($bytes, 1024);
-      $suffixes = array('B', 'kB', 'MB', 'GB', 'TB');
-      return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+  function formatBytes($bytes, $format = null) { 
+
+      // TODO: validate and trigger warning
+      if(!isset($format['precision'])) $format['precision'] = 2;
+
+      $base = log($bytes, 1048576);
+      $suffixes = array('kiB', 'MiB', 'GiB', 'TiB');
+      return round(pow(1048576, $base - floor($base)), $format['precision']) .' '. $suffixes[floor($base)];
+
   }
 
 }
