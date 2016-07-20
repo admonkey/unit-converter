@@ -19,7 +19,7 @@ class UnitConverterTest extends PHPUnit_Framework_TestCase {
     return [
       [1, null, '1 B'],
       [1000, null, '1000 B'],
-      [1000, ['unit' => 'KB'], '1 KB'],
+//       [1000, ['unit' => 'KB'], '1 KB'],
       [1024, null, '1 KiB'],
       [1048576, null, '1 MiB'],
       [2097152, null, '2 MiB'],
