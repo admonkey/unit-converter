@@ -8,8 +8,9 @@ class UnitConverterTest extends PHPUnit_Framework_TestCase {
   public function testCanFormatBytes($bytes, $format, $expected){
 
     $this->assertSame(
-    $expected, 
-    Puckett\UnitConverter::formatBytes($bytes, $format) );
+      $expected,
+      Puckett\UnitConverter::formatBytes($bytes, $format)
+    );
 
   }
 
