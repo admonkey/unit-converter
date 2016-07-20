@@ -2,7 +2,7 @@
 
 class UnitConverter {
 
-  function formatBytes($bytes, $format = null) { 
+  public static function formatBytes($bytes, $format = null) {
 
       // TODO: validate and trigger warning
       if(!isset($format['precision'])) $format['precision'] = 2;
