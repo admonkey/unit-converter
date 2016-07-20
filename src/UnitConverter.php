@@ -19,13 +19,13 @@ class UnitConverter {
   public static function formatBytes($bytes, $format = null) {
 
     // TODO: validate and trigger warning
-    // if(!isset($format['precision'])) $format['precision'] = 2;
+    if(!isset($format['precision'])) $format['precision'] = 2;
 
     // use O(n) sorted iteration
     // http://stackoverflow.com/a/6147491/4233593
     foreach (self::$byte_binary_unit_map as $key => $val)
       if ($bytes >= $val)
-        return number_format($bytes/$val).' '.$key;
+        return number_format($bytes/$val,$format['precision'])." $key";
 
   }
 
