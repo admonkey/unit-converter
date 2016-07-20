@@ -3,33 +3,32 @@
 class UnitConverterTest extends PHPUnit_Framework_TestCase {
 
   /**
-    * @dataProvider getByteFormats
+    * @dataProvider getBinaryByteFormats
     */
-  public function testCanFormatBytes($bytes, $format, $expected){
+  public function testCanFormatBinaryBytes($expected, $bytes){
 
     $this->assertSame(
       $expected,
-      Puckett\UnitConverter::formatBytes($bytes, $format)
+      Puckett\UnitConverter::formatBytes($bytes)
     );
 
   }
 
-  public function getByteFormats(){
+  public function getBinaryByteFormats(){
 
     return [
-      [1, null, '1 B'],
-      [1000, null, '1000 B'],
-//       [1000, ['unit' => 'KB'], '1 kB'],
-      [1024, null, '1 kiB'],
-      [1048576, null, '1 MiB'],
-      [2097152, null, '2 MiB'],
-      [1073741824, null, '1 GiB'],
-      [2147483648, null, '2 GiB'],
-      [1099511627776, null, '1 TiB'],
-      [1125899906842624, null, '1 PiB'],
-      [1152921504606846976, null, '1 EiB'],
-      [1180591620717411303424, null, '1 ZiB'],
-      [1208925819614629174706176, null, '1 YiB'],
+      ['1 B',     1],
+      ['1,000 B', 1000],
+      ['1 kiB',   1024],
+      ['1 MiB',   1048576],
+      ['2 MiB',   2097152],
+      ['1 GiB',   1073741824],
+      ['2 GiB',   2147483648],
+      ['1 TiB',   1099511627776],
+      ['1 PiB',   1125899906842624],
+      ['1 EiB',   1152921504606846976],
+      ['1 ZiB',   1180591620717411303424],
+      ['1 YiB',   1208925819614629174706176]
     ];
 
   }
